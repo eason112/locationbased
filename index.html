@@ -37,8 +37,8 @@
         var camera = document.querySelector('a-camera');
         camera.addEventListener('gps-camera-position-changed', function (event) {
             // 获取当前位置的经纬度
-            var latitude = event.detail.latitude;
-            var longitude = event.detail.longitude;
+            var latitude = event.detail.position.latitude;
+            var longitude = event.detail.position.longitude;
 
             // 动态更新a-text的value
             var textElement = document.querySelector('#latitude-longitude-text');
