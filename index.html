@@ -34,7 +34,8 @@
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
     <script>
-        window.addEventListener('gps-location-updated', function(event) {
+        var camera = document.querySelector('a-camera');
+        camera.addEventListener('gps-camera-position-changed', function (event) {
             // 获取当前位置的经纬度
             var latitude = event.detail.latitude;
             var longitude = event.detail.longitude;
