@@ -14,10 +14,16 @@
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
+    <a-text
+        id="latitude-longitude-text"
+        value="Waiting for GPS data..."
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        gps-entity-place="latitude: 25.0018; longitude: 25.0018;"
+      ></a-text>
       <a-box
         color="tomato"
         scale="10 10 10"
-        gps-entity-place="latitude: 25.0018; longitude: 121.5107;"
       ></a-box>
       <a-box
         color="tomato"
@@ -31,5 +37,16 @@
     ></a-box>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
+    <script>
+        window.addEventListener('gps-location-updated', function(event) {
+            // 获取当前位置的经纬度
+            var latitude = event.detail.latitude;
+            var longitude = event.detail.longitude;
+
+            // 动态更新a-text的value
+            var textElement = document.querySelector('#latitude-longitude-text');
+            textElement.setAttribute('value', `Latitude: ${latitude.toFixed(4)}\nLongitude: ${longitude.toFixed(4)}`);
+          });
+    </script>
   </body>
 </html>
