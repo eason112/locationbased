@@ -15,17 +15,23 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
+    <a-box 
+        look-at="[gps-camera]"
+		material="color: yellow"
+        scale="10 10 10"
+        gps-entity-place="latitude: 25.0020; longitude: 121.5108;"
+      ></a-box>
       <a-box 
         look-at="[gps-camera]"
 		material="color: yellow"
         scale="10 10 10"
-        gps-entity-place="latitude: 25.0020-0.0005; longitude: 121.5108+0.0006;"
+        gps-entity-place="latitude: 25.0019; longitude: 121.5109;"
       ></a-box>
       <a-box 
         look-at="[gps-camera]"
 		material="color: red"
         scale="10 10 10"
-        gps-entity-place="latitude: 25.0020-0.0001; longitude: 121.5108+0.0004;"
+        gps-entity-place="latitude: 25.0021; longitude: 121.5107;"
       ></a-box>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
